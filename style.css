@@ -1,91 +1,148 @@
-body{
-display: flex;
-padding: 6px 10px;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 10px;
-}
-
-#main{
-display: flex;
-padding: 1px 10px 37px 10px;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 20px;
-}
-
-
-#container1{
-display: flex;
-width: 328px;
-height: 201px;
-padding: 41px 43px;
-flex-direction: column;
-align-items: flex-start;
-gap: 32px;
-border-radius: 10px 100px 10px 10px;
-background: #1D2C67;
-}
-
-#container2{
-    display: flex;
-    width: 328px;
-    height: 160px;
-    padding: 31px 12px;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    border-radius: 10px;
-    background: #1D2C67;
-    color: #FFF;
+:root {
+    --pale-blue: #dddbff;
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: #0c122c;
+    --gradient-1: hsl(6, 100%, 80%);
+    --gradient-2: hsl(335, 100%, 65%);
+  }
+  
+  body {
+    margin: 0;
+    padding: 6px 10px;
+    background-image: url("images/bg-mobile.png");
+    background-repeat: no-repeat;
+    font-family: "Raleway";
     font-size: 14px;
-    font-weight: 400;
-
-
-}
-
-#icon{
-display: flex;
-align-items: flex-start;
-gap: 17px;
-}
-
-#outer-progress{
+    color: var(--pale-blue);
+    min-height: 100vh;
+    background-size: cover;
+  }
+  
+  #top-container {
+    background-color: var(--dark-blue);
+    width: 328px;
+    height: 201px;
+    padding: 41px 43px;
+    border-radius: 10px 100px 10px 10px;
+  }
+  
+  #logo {
+    height: 135px;
+  }
+  #images-container {
+    gap: 17px;
+  }
+  
+  .image-container {
     display: flex;
-width: 258px;
-height: 20px;
-padding: 1px;
-align-items: center;
-gap: 42px;
-flex-shrink: 0;
-border-radius: 10px;
-background: #0C122C;
-}
-
-#inner-progress{
-display: flex;
-width: 194px;
-height: 14px;
-padding: 0px 2px;
-justify-content: flex-end;
-align-items: center;
-flex-shrink: 0;
-border-radius: 10px;
-background: #FFA399;
-
-}
-#middletext{
-    display: flex;
-    width: 265px;
-    height: 17px;
-    padding: 0px 40px;
+    background-color: var(--very-dark-blue);
+    height: 47px;
+    width: 48px;
+    border-radius: 8px;
     justify-content: center;
-    align-items: flex-start;
-    gap: 182px;
-    flex-shrink: 0;
-}
-
-
-
+    align-items: center;
+  }
+  
+  #main {
+    gap: 20px;
+  }
+  
+  #bottom-container {
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    width: 328px;
+    max-height: 160px;
+    padding: 30px 12px;
+    gap: 12px;
+  }
+  
+  #text {
+    font-weight: 400;
+    width: 100%;
+  }
+  
+  span {
+    font-weight: 700;
+  }
+  
+  #progress-outer {
+    height: 20px;
+    padding: 1px;
+    gap: 42px;
+    background-color: var(--very-dark-blue);
+    border-radius: 10px;
+  }
+  
+  #progress-innner {
+    width: 81%;
+    height: 14px;
+    padding: 0px 2px;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      90deg,
+      var(--gradient-1),
+      var(--gradient-2)
+    );
+  }
+  
+  #circle {
+    width: 9px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--pale-blue);
+  }
+  
+  #storage {
+    height: 18px;
+    font-weight: 700;
+  }
+  
+  #floater {
+    width: 180px;
+    height: 73px;
+    padding: 15px 6px;
+    gap: 6px;
+    background-color: white;
+    color: var(--very-dark-blue);
+    border-radius: 10px;
+  }
+  
+  #number {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+  #gigs {
+    color: var(--grayish-blue);
+    font-weight: 700;
+  }
+  
+  @media (min-width: 576px) {
+    body {
+      background-image: url(./images/bg-desktop.png);
+      background-size: 100vw 50%;
+      background-position: bottom;
+      background-color: var(--very-dark-blue);
+    }
+    #bottom-container {
+      width: 543px;
+      gap: 16px;
+      padding: 32px 40px;
+    }
+  
+    #floater {
+      padding: 10px 24px;
+    }
+  
+    #triangle {
+      width: 46px;
+      height: 32px;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid white;
+      transform: rotate(41deg);
+      left: 35px;
+      top: 20px;
+      position: relative;
+    }
